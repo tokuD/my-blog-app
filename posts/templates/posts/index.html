@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>投稿一覧</title>
+</head>
+<body>
+    <h1>ようこそ、とくDのブログへ！</h1>
+    <h2>最新の投稿</h2>
+
+    {% for post in posts.all %}
+        <p>
+            #{{post.id}}:
+            {{ post.title}}
+            <br>
+            {{post.published}}
+            <br>
+            <img src="{{post.image.url}}">
+            {{post.summary}}
+            <br>
+        </p>
+    {% endfor %}
+
+</body>
+</html>
